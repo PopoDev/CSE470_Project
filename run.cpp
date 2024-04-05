@@ -405,7 +405,9 @@ int main(int argc, char *argv[]) {
             softmax(state.logits, state.logits);
             next = sample(state.logits);
         }
-        std::cout << vocab[next];
+        // following BOS token (1), sentencepiece decoder strips any leading whitespace
+        std::string token_str = (token == 1 && vocab[next][0] == ' ') ? vocab[next].substr(1) : vocab[next];
+        std::cout << token_str;
 
         token = next;
     }
