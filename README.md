@@ -3,7 +3,6 @@
 
 ## Requirements
 - gcc compiler
-- g++ compiler
 
 
 ## Getting Started
@@ -25,4 +24,17 @@ make run
 Run the code
 ```bash
 ./run models/stories15M.bin
+```
+
+## Optimization
+Enable fast math optimization
+```bash
+make runfast
+./run models/stories15M.bin
+```
+
+Enable OpenMP parallelization. OpenMP is a compiler directive that allows the compiler to parallelize the code.
+```bash
+make runomp
+OMP_NUM_THREADS=4 ./run models/stories15M.bin
 ```
