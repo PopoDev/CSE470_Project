@@ -2,6 +2,7 @@
 
 
 ## Requirements
+- gcc compiler
 - g++ compiler
 
 
@@ -13,15 +14,15 @@ git clone https://github.com/PopoDev/CSE470_Project.git
 
 Download the 15M parameter model trained on the TinyStories dataset
 ```bash
-wget https://karpathy.ai/llama2c/model.bin -P out
+wget https://huggingface.co/karpathy/tinyllamas/resolve/main/stories15M.bin -P models/
 ```
 
 Compile the code
 ```bash
-g++ run.cpp -o run
+make run
 ```
 
 Run the code
 ```bash
-./run out/model.bin
+./run models/stories15M.bin
 ```
