@@ -26,3 +26,7 @@ runfast: run.c
 .PHONY: runomp
 runomp: run.c
 	$(CC) -Ofast -fopenmp -march=native run.c  -lm  -o run
+
+.PHONY: runcuda
+runcuda: run.cu
+	nvcc -o run run.cu	
